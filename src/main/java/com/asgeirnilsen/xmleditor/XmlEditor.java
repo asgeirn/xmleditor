@@ -26,14 +26,14 @@ public class XmlEditor {
 
     public static void main(String...args) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
 
-        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        DOMImplementation implementation = builder.getDOMImplementation();
-        DOMImplementationLS implementationLS = (DOMImplementationLS)implementation.getFeature("LS", "3.0");
-        LSSerializer serializer = implementationLS.createLSSerializer();
-        XPath xpath = XPathFactory.newInstance().newXPath();
-        Map<String, String> changes = new HashMap<String, String>();
+        final DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        final DOMImplementation implementation = builder.getDOMImplementation();
+        final DOMImplementationLS implementationLS = (DOMImplementationLS)implementation.getFeature("LS", "3.0");
+        final LSSerializer serializer = implementationLS.createLSSerializer();
+        final XPath xpath = XPathFactory.newInstance().newXPath();
+        final Map<String, String> changes = new HashMap<String, String>();
         
-        for (String arg : args) {
+        for (final String arg : args) {
             if (arg.contains(":=")) {
                 String[] change = arg.split(":=");
                 changes.put(change[0], change[1]);
