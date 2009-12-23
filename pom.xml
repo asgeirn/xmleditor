@@ -7,6 +7,12 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>XPath XML editor</name>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus</id>
+      <url>http://localhost:18081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
